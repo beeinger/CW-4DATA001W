@@ -1,0 +1,75 @@
+---
+title: "Part 3:	Iris Flower Data Analysis"
+output: html_notebook
+---
+
+### 1 Data	analysis	to	be	conducted	in	R.	
+
+The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.
+
+#### a. Quote	the	description	of	the	data	set	as	found	default	R	Help.	
+
+This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+
+#### 1.b.Present	the	data briefly	by	indicating	the	variables	names,	their	statistical	class,	the	size	of	the	vectors	(1D	arrays),	and	by	showing	first	6	lines	of	values	for	each	variables.
+
+```{r}
+str(iris)
+```
+The data is composed of 5 different variables. These variables are:
+
+* Sepal.Lenght which contains numeric decimal values
+* Sepal.Width which contains numeric decimal values
+* Petal.Length which contains numeric decimal values
+* Petal.Width which contains numeric decimal values
+* Species which contains categorical values
+ 
+```{r}
+nrow(iris)
+```
+
+There are a total of 150 records. We can see the first six:
+
+```{r}
+head(iris, 6)
+```
+#### 2. Calculate	and	present	the	standard	descriptive	statistics	(central	and	dispersion)	for	all	4	numerical	variables.
+
+```{r}
+num.vars <- iris[,1:4]
+summary(num.vars)
+```
+```{r}
+for (i in 1:length(num.vars)) {
+        boxplot(num.vars[,i], main=names(num.vars[i]), type="l")
+
+}
+```
+### 3. Consider	all	possible	scatter	plots	of	the	4	numerical	variables	against	one	another.
+
+#### 1. How	many	plots	are	possible	in theory?	How	many	scatter	plots	are	there,	if one	uses	each	variable	pair	once?	Use	factorial	based	formulas.
+
+We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself. 
+
+$$^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
+6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.
+
+
+#### ii) Plot	all	scatter	plots	using	each	variable	pair	once.
+
+```{r}
+pairs(num.vars,     
+      pch = 20,  
+      col = c("#04ADC5", "#BBD931", "#FB3F16")[iris$Species] ,
+      upper.panel=NULL)
+```
+
+
+#### iii) Indicate, which plots seem to exhibit	a	linear relationship (straight	line)? Conclude in one sentence what these relationships indicate.
+
+1. Petal length vs. Petal width
+2. Sepal length vs. Petal length
+3. Sepal lenght vs. Petal width
+ 
+
+
