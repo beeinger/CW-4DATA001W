@@ -3,25 +3,25 @@ title: "Part 3:	Iris Flower Data Analysis"
 output: html_notebook
 ---
 
-### 1 Data	analysis	to	be	conducted	in	R.	
+### 1. Data analysis to be conducted	in	R.
 
 The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.
 
-#### a. Quote	the	description	of	the	data	set	as	found	default	R	Help.	
+#### a. Quote the description of the data set as found default R Help.
 
 This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
 
-#### 1.b.Present	the	data briefly	by	indicating	the	variables	names,	their	statistical	class,	the	size	of	the	vectors	(1D	arrays),	and	by	showing	first	6	lines	of	values	for	each	variables.
+#### b. Present the data briefly by indicating the variables names, their statistical class, the size of the vectors (1D arrays), and by showing first 6 lines of values for each variables.
 
 ```{r}
 str(iris)
 ```
 The data is composed of 5 different variables. These variables are:
 
-* Sepal.Lenght which contains numeric decimal values
-* Sepal.Width which contains numeric decimal values
-* Petal.Length which contains numeric decimal values
-* Petal.Width which contains numeric decimal values
+* Sepal.Lenght which contains continuous numeric values
+* Sepal.Width which contains continuous numeric values
+* Petal.Length which contains continuous numeric values
+* Petal.Width which contains continuous numeric values
 * Species which contains categorical values
  
 ```{r}
@@ -33,21 +33,25 @@ There are a total of 150 records. We can see the first six:
 ```{r}
 head(iris, 6)
 ```
-#### 2. Calculate	and	present	the	standard	descriptive	statistics	(central	and	dispersion)	for	all	4	numerical	variables.
+#### 2. Calculate and present the standard descriptive statistics (central and dispersion) for all 4 numerical variables.
 
 ```{r}
 num.vars <- iris[,1:4]
 summary(num.vars)
 ```
+*Needs discussion*
+
+*Plots below maybe not needed*
+
 ```{r}
 for (i in 1:length(num.vars)) {
         boxplot(num.vars[,i], main=names(num.vars[i]), type="l")
 
 }
 ```
-### 3. Consider	all	possible	scatter	plots	of	the	4	numerical	variables	against	one	another.
+### 3. Consider all possible scatter plots of the 4 numerical variables against one another.
 
-#### 1. How	many	plots	are	possible	in theory?	How	many	scatter	plots	are	there,	if one	uses	each	variable	pair	once?	Use	factorial	based	formulas.
+#### 1. How many plots are possible in theory? How many scatter plots are there, if one uses each variable pair once? Use factorial based formulas.
 
 We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself. 
 
@@ -55,7 +59,7 @@ $$^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
 6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.
 
 
-#### ii) Plot	all	scatter	plots	using	each	variable	pair	once.
+#### 2. Plot all scatter plots using each variable pair once.
 
 ```{r}
 pairs(num.vars,     
@@ -65,11 +69,69 @@ pairs(num.vars,
 ```
 
 
-#### iii) Indicate, which plots seem to exhibit	a	linear relationship (straight	line)? Conclude in one sentence what these relationships indicate.
+#### 3. Indicate, which plots seem to exhibit a linear relationship (straight line)? Conclude in one sentence what these relationships indicate.
 
 1. Petal length vs. Petal width
 2. Sepal length vs. Petal length
 3. Sepal lenght vs. Petal width
- 
+
+### 4.
+
+#### 1. Create (relative) frequency histograms for each variable.
+
+```{r}
+hist(iris$Sepal.Width, freq=TRUE)
+```
+
+```{r}
+hist(iris$Sepal.Length, freq=TRUE)
+```
+
+```{r}
+hist(iris$Petal.Length, freq=TRUE)
+```
+
+```{r}
+hist(iris$Petal.Width, freq=TRUE)
+```
+
+
+#### 2. Which variable appears to be normally distributed? Below this will be variable X.
+
+Sepal width
+
+#### 3. Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.
+
+```{r}
+X <- iris$Sepal.Width
+
+X.mean <- mean(X)
+
+X.mean
+```
+
+The mean is $\mu=3.057333$
+
+```{r}
+X.sd <- sd(X)
+
+X.sd
+```
+
+The standard deviation is $\sigma=0.4358663$
+
+ $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
+<span style="color: red;">Do you think that "define (in a formula)" means we have to make it explicit?</span>
+
+In R we can use the `dnorm` function.
+
+```{r}
+x <- seq(1, 5, length=150)
+y <- dnorm(x, mean=X.mean, sd=X.sd)
+plot(x, y, type='l')
+```
+
+
+
 
 
