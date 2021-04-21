@@ -122,6 +122,8 @@ The standard deviation is $\sigma=0.4358663$
 
  $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
 <span style="color: red;">Do you think that "define (in a formula)" means we have to make it explicit?</span>
+<br/>
+<span style="color: blue;">Honestly I have no idea ¯\\\_(ツ)\_/¯</span>
 
 In R we can use the `dnorm` function.
 
@@ -131,7 +133,34 @@ y <- dnorm(x, mean=X.mean, sd=X.sd)
 plot(x, y, type='l')
 ```
 
+### 5. Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:
 
+<span style="color: blue;">What do you think about this one? I am just coding my way through idk if I'm doing it right</span>
 
+<br/>
+***A helper function to represent data as percentage:***
+
+```{r}
+percent <- function(number){
+  return(sprintf("%1.2f%%", number * 100))
+}
+```
+<br/>
+
+#### 1. X > 3
+```{r}
+i <- sum(x > 3)/length(x)
+paste(i, "->", percent(i))
+```
+#### 2. 2.5 < X < 3.5
+```{r}
+ii <- sum(2.5 < x & x < 3.5)/length(x)
+paste(ii, "->", percent(ii))
+```
+#### 3. X < 2.5
+```{r}
+iii <- sum(x < 2.5)/length(x)
+paste(iii, "->", percent(iii))
+```
 
 
