@@ -164,15 +164,25 @@ percent <- function(number){
 i <- sum(x > 3)/length(x)
 paste(i, "->", percent(i))
 ```
+```{r}
+percent(pnorm(3, mean=X.mean, sd=X.sd, lower.tail=FALSE))
+```
+
 #### ii) 2.5 < X < 3.5
 ```{r}
 ii <- sum(2.5 < x & x < 3.5)/length(x)
 paste(ii, "->", percent(ii))
 ```
+```{r}
+percent(pnorm(3.5,mean = X.mean, sd =X.sd)-pnorm(2.5,mean = X.mean, sd =X.sd))
+```
 #### iii) X < 2.5
 ```{r}
 iii <- sum(x < 2.5)/length(x)
 paste(iii, "->", percent(iii))
+```
+```{r}
+percent(pnorm(2.5, mean=X.mean, sd=X.sd, lower.tail=TRUE))
 ```
 
 <br/>
