@@ -137,8 +137,8 @@ X.sd
 In R we can use the `dnorm` function.
 
 ```{r}
-x <- seq(1, 5, length=150)
-y <- dnorm(x, mean=X.mean, sd=X.sd)
+x.axis <- seq(1, 5, length=150)
+y <- dnorm(x.axis, mean=X.mean, sd=X.sd)
 plot(x, y, type='l')
 ```
 
@@ -161,7 +161,7 @@ percent <- function(number){
 
 #### i) X > 3
 ```{r}
-i <- sum(x > 3)/length(x)
+i <- sum(X > 3)/length(x)
 paste(i, "->", percent(i))
 ```
 ```{r}
@@ -170,7 +170,7 @@ percent(pnorm(3, mean=X.mean, sd=X.sd, lower.tail=FALSE))
 
 #### ii) 2.5 < X < 3.5
 ```{r}
-ii <- sum(2.5 < x & x < 3.5)/length(x)
+ii <- sum(2.5 < X & X < 3.5)/length(x)
 paste(ii, "->", percent(ii))
 ```
 ```{r}
@@ -178,7 +178,7 @@ percent(pnorm(3.5,mean = X.mean, sd =X.sd)-pnorm(2.5,mean = X.mean, sd =X.sd))
 ```
 #### iii) X < 2.5
 ```{r}
-iii <- sum(x < 2.5)/length(x)
+iii <- sum(X < 2.5)/length(x)
 paste(iii, "->", percent(iii))
 ```
 ```{r}
