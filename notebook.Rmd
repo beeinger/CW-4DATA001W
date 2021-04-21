@@ -3,20 +3,21 @@ title: "Part 3:	Iris Flower Data Analysis"
 output: html_notebook
 ---
 
-### 1. Data analysis to be conducted	in	R.
+## Data analysis to be conducted	in	R.
 
-The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.
+*The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.*
 
-#### a. Quote the description of the data set as found default R Help.
+<br/>
 
-This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+### 1) Quote the description of the data set as found default R Help. Present the data briefly by indicating the variables names, their statistical class, the size of the vectors (1D arrays), and by showing first 6 lines of values for each variables.
+<br/>
 
-#### b. Present the data briefly by indicating the variables names, their statistical class, the size of the vectors (1D arrays), and by showing first 6 lines of values for each variables.
+**This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.**
 
 ```{r}
 str(iris)
 ```
-The data is composed of 5 different variables. These variables are:
+**The data is composed of 5 different variables. These variables are:**
 
 * Sepal.Lenght which contains continuous numeric values
 * Sepal.Width which contains continuous numeric values
@@ -28,12 +29,15 @@ The data is composed of 5 different variables. These variables are:
 nrow(iris)
 ```
 
-There are a total of 150 records. We can see the first six:
+**There are a total of 150 records. We can see the first six:**
 
 ```{r}
 head(iris, 6)
 ```
-#### 2. Calculate and present the standard descriptive statistics (central and dispersion) for all 4 numerical variables.
+
+<br/>
+
+### 2) Calculate and present the standard descriptive statistics (central and dispersion) for all 4 numerical variables.
 
 ```{r}
 num.vars <- iris[,1:4]
@@ -49,17 +53,20 @@ for (i in 1:length(num.vars)) {
 
 }
 ```
-### 3. Consider all possible scatter plots of the 4 numerical variables against one another.
 
-#### 1. How many plots are possible in theory? How many scatter plots are there, if one uses each variable pair once? Use factorial based formulas.
+<br/>
+
+### 3) Consider all possible scatter plots of the 4 numerical variables against one another.
+
+#### i) How many plots are possible in theory? How many scatter plots are there, if one uses each variable pair once? Use factorial based formulas.
 
 We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself. 
 
 $$^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
-6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.
+**6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.**
 
 
-#### 2. Plot all scatter plots using each variable pair once.
+#### ii) Plot all scatter plots using each variable pair once.
 
 ```{r}
 pairs(num.vars,     
@@ -69,15 +76,17 @@ pairs(num.vars,
 ```
 
 
-#### 3. Indicate, which plots seem to exhibit a linear relationship (straight line)? Conclude in one sentence what these relationships indicate.
+#### iii) Indicate, which plots seem to exhibit a linear relationship (straight line)? Conclude in one sentence what these relationships indicate.
 
 1. Petal length vs. Petal width
 2. Sepal length vs. Petal length
 3. Sepal lenght vs. Petal width
 
-### 4.
+<br/>
 
-#### 1. Create (relative) frequency histograms for each variable.
+### 4)
+
+#### i) Create (relative) frequency histograms for each variable.
 
 ```{r}
 hist(iris$Sepal.Width, freq=TRUE)
@@ -96,11 +105,11 @@ hist(iris$Petal.Width, freq=TRUE)
 ```
 
 
-#### 2. Which variable appears to be normally distributed? Below this will be variable X.
+#### ii) Which variable appears to be normally distributed? Below this will be variable X.
 
 Sepal width
 
-#### 3. Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.
+#### iii) Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.
 
 ```{r}
 X <- iris$Sepal.Width
@@ -110,7 +119,7 @@ X.mean <- mean(X)
 X.mean
 ```
 
-The mean is $\mu=3.057333$
+**The mean is $\mu=3.057333$**
 
 ```{r}
 X.sd <- sd(X)
@@ -118,7 +127,7 @@ X.sd <- sd(X)
 X.sd
 ```
 
-The standard deviation is $\sigma=0.4358663$
+**The standard deviation is $\sigma=0.4358663$**
 
  $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
 <span style="color: red;">Do you think that "define (in a formula)" means we have to make it explicit?</span>
@@ -133,11 +142,14 @@ y <- dnorm(x, mean=X.mean, sd=X.sd)
 plot(x, y, type='l')
 ```
 
-### 5. Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:
+<br/>
+
+### 5) Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:
 
 <span style="color: blue;">What do you think about this one? I am just coding my way through idk if I'm doing it right</span>
 
 <br/>
+
 ***A helper function to represent data as percentage:***
 
 ```{r}
@@ -147,20 +159,32 @@ percent <- function(number){
 ```
 <br/>
 
-#### 1. X > 3
+#### i) X > 3
 ```{r}
 i <- sum(x > 3)/length(x)
 paste(i, "->", percent(i))
 ```
-#### 2. 2.5 < X < 3.5
+#### ii) 2.5 < X < 3.5
 ```{r}
 ii <- sum(2.5 < x & x < 3.5)/length(x)
 paste(ii, "->", percent(ii))
 ```
-#### 3. X < 2.5
+#### iii) X < 2.5
 ```{r}
 iii <- sum(x < 2.5)/length(x)
 paste(iii, "->", percent(iii))
 ```
 
+<br/>
 
+### 6) Take the scatter plots of the variable X versus i) the petal length and ii) the sepal length. Notice in each plot the data points appear to be clustered in two clusters. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
+
+<br/>
+
+### 7)
+
+#### i) Establish the 95% confidence interval for the true mean of X based on all the X data.
+
+#### ii) Take a subset, S, of X that includes only the X values of the species that was identified in 3.6. Establish the 95% confidence interval for the true mean X based on this sample subset.
+
+#### iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?

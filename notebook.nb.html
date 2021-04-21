@@ -215,15 +215,14 @@ pre code {
 
 
 <!-- rnb-text-begin -->
-<div id="data-analysis-to-be-conducted-in-r." class="section level3">
-<h3>1. Data analysis to be conducted in R.</h3>
-<p>The data set used is built-in the studio R package. It is called the “Edgar Anderson’s Iris Data” set. The data is in ‘data frame’ format and named ‘iris’. Type ‘iris’ in R Help to find out more about the data set.</p>
-<div id="a.-quote-the-description-of-the-data-set-as-found-default-r-help." class="section level4">
-<h4>a. Quote the description of the data set as found default R Help.</h4>
-<p>This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</p>
-</div>
-<div id="b.-present-the-data-briefly-by-indicating-the-variables-names-their-statistical-class-the-size-of-the-vectors-1d-arrays-and-by-showing-first-6-lines-of-values-for-each-variables." class="section level4">
-<h4>b. Present the data briefly by indicating the variables names, their statistical class, the size of the vectors (1D arrays), and by showing first 6 lines of values for each variables.</h4>
+<div id="data-analysis-to-be-conducted-in-r." class="section level2">
+<h2>Data analysis to be conducted in R.</h2>
+<p><em>The data set used is built-in the studio R package. It is called the “Edgar Anderson’s Iris Data” set. The data is in ‘data frame’ format and named ‘iris’. Type ‘iris’ in R Help to find out more about the data set.</em></p>
+<p><br /></p>
+<div id="quote-the-description-of-the-data-set-as-found-default-r-help.-present-the-data-briefly-by-indicating-the-variables-names-their-statistical-class-the-size-of-the-vectors-1d-arrays-and-by-showing-first-6-lines-of-values-for-each-variables." class="section level3">
+<h3>1) Quote the description of the data set as found default R Help. Present the data briefly by indicating the variables names, their statistical class, the size of the vectors (1D arrays), and by showing first 6 lines of values for each variables.</h3>
+<p><br /></p>
+<p><strong>This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKGlyaXMpXG5gYGAifQ== -->
@@ -239,7 +238,7 @@ pre code {
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The data is composed of 5 different variables. These variables are:</p>
+<p><strong>The data is composed of 5 different variables. These variables are:</strong></p>
 <ul>
 <li>Sepal.Lenght which contains continuous numeric values</li>
 <li>Sepal.Width which contains continuous numeric values</li>
@@ -257,7 +256,7 @@ pre code {
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>There are a total of 150 records. We can see the first six:</p>
+<p><strong>There are a total of 150 records. We can see the first six:</strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChpcmlzLCA2KVxuYGBgIn0= -->
@@ -272,9 +271,10 @@ pre code {
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p><br /></p>
 </div>
-<div id="calculate-and-present-the-standard-descriptive-statistics-central-and-dispersion-for-all-4-numerical-variables." class="section level4">
-<h4>2. Calculate and present the standard descriptive statistics (central and dispersion) for all 4 numerical variables.</h4>
+<div id="calculate-and-present-the-standard-descriptive-statistics-central-and-dispersion-for-all-4-numerical-variables." class="section level3">
+<h3>2) Calculate and present the standard descriptive statistics (central and dispersion) for all 4 numerical variables.</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtLnZhcnMgPC0gaXJpc1ssMTo0XVxuc3VtbWFyeShudW0udmFycylcbmBgYCJ9 -->
@@ -316,17 +316,17 @@ summary(num.vars)</code></pre>
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
+<p><br /></p>
 </div>
 <div id="consider-all-possible-scatter-plots-of-the-4-numerical-variables-against-one-another." class="section level3">
-<h3>3. Consider all possible scatter plots of the 4 numerical variables against one another.</h3>
-<div id="how-many-plots-are-possible-in-theory-how-many-scatter-plots-are-there-if-one-uses-each-variable-pair-once-use-factorial-based-formulas." class="section level4">
-<h4>1. How many plots are possible in theory? How many scatter plots are there, if one uses each variable pair once? Use factorial based formulas.</h4>
+<h3>3) Consider all possible scatter plots of the 4 numerical variables against one another.</h3>
+<div id="i-how-many-plots-are-possible-in-theory-how-many-scatter-plots-are-there-if-one-uses-each-variable-pair-once-use-factorial-based-formulas." class="section level4">
+<h4>i) How many plots are possible in theory? How many scatter plots are there, if one uses each variable pair once? Use factorial based formulas.</h4>
 <p>We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself.</p>
-<p><span class="math display">\[^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6\]</span> 6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.</p>
+<p><span class="math display">\[^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6\]</span> <strong>6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.</strong></p>
 </div>
-<div id="plot-all-scatter-plots-using-each-variable-pair-once." class="section level4">
-<h4>2. Plot all scatter plots using each variable pair once.</h4>
+<div id="ii-plot-all-scatter-plots-using-each-variable-pair-once." class="section level4">
+<h4>ii) Plot all scatter plots using each variable pair once.</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFpcnMobnVtLnZhcnMsICAgICBcbiAgICAgIHBjaCA9IDIwLCAgXG4gICAgICBjb2wgPSBjKFwiIzA0QURDNVwiLCBcIiNCQkQ5MzFcIiwgXCIjRkIzRjE2XCIpW2lyaXMkU3BlY2llc10gLFxuICAgICAgdXBwZXIucGFuZWw9TlVMTClcbmBgYCJ9 -->
@@ -341,19 +341,20 @@ summary(num.vars)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="indicate-which-plots-seem-to-exhibit-a-linear-relationship-straight-line-conclude-in-one-sentence-what-these-relationships-indicate." class="section level4">
-<h4>3. Indicate, which plots seem to exhibit a linear relationship (straight line)? Conclude in one sentence what these relationships indicate.</h4>
+<div id="iii-indicate-which-plots-seem-to-exhibit-a-linear-relationship-straight-line-conclude-in-one-sentence-what-these-relationships-indicate." class="section level4">
+<h4>iii) Indicate, which plots seem to exhibit a linear relationship (straight line)? Conclude in one sentence what these relationships indicate.</h4>
 <ol style="list-style-type: decimal">
 <li>Petal length vs. Petal width</li>
 <li>Sepal length vs. Petal length</li>
 <li>Sepal lenght vs. Petal width</li>
 </ol>
+<p><br /></p>
 </div>
 </div>
 <div id="section" class="section level3">
-<h3>4.</h3>
-<div id="create-relative-frequency-histograms-for-each-variable." class="section level4">
-<h4>1. Create (relative) frequency histograms for each variable.</h4>
+<h3>4)</h3>
+<div id="i-create-relative-frequency-histograms-for-each-variable." class="section level4">
+<h4>i) Create (relative) frequency histograms for each variable.</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGlzdChpcmlzJFNlcGFsLldpZHRoLCBmcmVxPVRSVUUpXG5gYGAifQ== -->
@@ -395,12 +396,12 @@ summary(num.vars)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="which-variable-appears-to-be-normally-distributed-below-this-will-be-variable-x." class="section level4">
-<h4>2. Which variable appears to be normally distributed? Below this will be variable X.</h4>
+<div id="ii-which-variable-appears-to-be-normally-distributed-below-this-will-be-variable-x." class="section level4">
+<h4>ii) Which variable appears to be normally distributed? Below this will be variable X.</h4>
 <p>Sepal width</p>
 </div>
-<div id="isolate-the-variable-which-appears-normally-distributed-x.-based-on-its-mean-and-its-standard-deviation-define-in-a-formula-the-model-normal-probability-density-function-and-plot-it." class="section level4">
-<h4>3. Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.</h4>
+<div id="iii-isolate-the-variable-which-appears-normally-distributed-x.-based-on-its-mean-and-its-standard-deviation-define-in-a-formula-the-model-normal-probability-density-function-and-plot-it." class="section level4">
+<h4>iii) Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWCA8LSBpcmlzJFNlcGFsLldpZHRoXG5cblgubWVhbiA8LSBtZWFuKFgpXG5cblgubWVhblxuYGBgIn0= -->
@@ -415,7 +416,7 @@ X.mean</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The mean is <span class="math inline">\(\mu=3.057333\)</span></p>
+<p><strong>The mean is <span class="math inline">\(\mu=3.057333\)</span></strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWC5zZCA8LSBzZChYKVxuXG5YLnNkXG5gYGAifQ== -->
@@ -428,7 +429,7 @@ X.sd</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The standard deviation is <span class="math inline">\(\sigma=0.4358663\)</span></p>
+<p><strong>The standard deviation is <span class="math inline">\(\sigma=0.4358663\)</span></strong></p>
 <p><span class="math display">\[f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}\]</span> <span style="color: red;">Do you think that “define (in a formula)” means we have to make it explicit?</span> <br /> <span style="color: blue;">Honestly I have no idea ¯\_(ツ)_/¯</span></p>
 <p>In R we can use the <code>dnorm</code> function.</p>
 <!-- rnb-text-end -->
@@ -443,12 +444,14 @@ plot(x, y, type=&#39;l&#39;)</code></pre>
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p><br /></p>
 </div>
 </div>
 <div id="consider-the-data-in-x-as-a-population-and-assume-it-is-normally-distributed.-estimate-the-probability-that-iris-flowers-have" class="section level3">
-<h3>5. Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:</h3>
+<h3>5) Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:</h3>
 <p><span style="color: blue;">What do you think about this one? I am just coding my way through idk if I’m doing it right</span></p>
-<p><br /> <strong><em>A helper function to represent data as percentage:</em></strong></p>
+<p><br /></p>
+<p><strong><em>A helper function to represent data as percentage:</em></strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVyY2VudCA8LSBmdW5jdGlvbihudW1iZXIpe1xuICByZXR1cm4oc3ByaW50ZihcIiUxLjJmJSVcIiwgbnVtYmVyICogMTAwKSlcbn1cbmBgYCJ9 -->
@@ -459,8 +462,8 @@ plot(x, y, type=&#39;l&#39;)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p><br /></p>
-<div id="x-3" class="section level4">
-<h4>1. X &gt; 3</h4>
+<div id="i-x-3" class="section level4">
+<h4>i) X &gt; 3</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaSA8LSBzdW0oeCA+IDMpL2xlbmd0aCh4KVxucGFzdGUoaSwgXCItPlwiLCBwZXJjZW50KGkpKVxuYGBgIn0= -->
@@ -473,8 +476,8 @@ paste(i, &quot;-&gt;&quot;, percent(i))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="x-3.5" class="section level4">
-<h4>2. 2.5 &lt; X &lt; 3.5</h4>
+<div id="ii-2.5-x-3.5" class="section level4">
+<h4>ii) 2.5 &lt; X &lt; 3.5</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWkgPC0gc3VtKDIuNSA8IHggJiB4IDwgMy41KS9sZW5ndGgoeClcbnBhc3RlKGlpLCBcIi0+XCIsIHBlcmNlbnQoaWkpKVxuYGBgIn0= -->
@@ -487,8 +490,8 @@ paste(ii, &quot;-&gt;&quot;, percent(ii))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="x-2.5" class="section level4">
-<h4>3. X &lt; 2.5</h4>
+<div id="iii-x-2.5" class="section level4">
+<h4>iii) X &lt; 2.5</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWlpIDwtIHN1bSh4IDwgMi41KS9sZW5ndGgoeClcbnBhc3RlKGlpaSwgXCItPlwiLCBwZXJjZW50KGlpaSkpXG5gYGAifQ== -->
@@ -500,11 +503,29 @@ paste(iii, &quot;-&gt;&quot;, percent(iii))</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p><br /></p>
+</div>
+</div>
+<div id="take-the-scatter-plots-of-the-variable-x-versus-i-the-petal-length-and-ii-the-sepal-length.-notice-in-each-plot-the-data-points-appear-to-be-clustered-in-two-clusters.-put-a-threshold-limit-to-isolate-the-data-points-of-the-first-cluster-corresponding-to-lower-values-of-petal-length-and-petal-width.-examine-if-these-belong-to-same-species-by-checking-the-data-variable-species." class="section level3">
+<h3>6) Take the scatter plots of the variable X versus i) the petal length and ii) the sepal length. Notice in each plot the data points appear to be clustered in two clusters. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable ‘Species’.</h3>
+<p><br /></p>
+</div>
+<div id="section-1" class="section level3">
+<h3>7)</h3>
+<div id="i-establish-the-95-confidence-interval-for-the-true-mean-of-x-based-on-all-the-x-data." class="section level4">
+<h4>i) Establish the 95% confidence interval for the true mean of X based on all the X data.</h4>
+</div>
+<div id="ii-take-a-subset-s-of-x-that-includes-only-the-x-values-of-the-species-that-was-identified-in-3.6.-establish-the-95-confidence-interval-for-the-true-mean-x-based-on-this-sample-subset." class="section level4">
+<h4>ii) Take a subset, S, of X that includes only the X values of the species that was identified in 3.6. Establish the 95% confidence interval for the true mean X based on this sample subset.</h4>
+</div>
+<div id="iii-are-both-samples-large-enough-for-such-statistical-study-what-type-of-statistical-study-is-this-what-does-it-consist-in-and-how-does-it-compare-to-the-approach-used-in-3.5" class="section level4">
+<h4>iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?</h4>
 <!-- rnb-text-end -->
 </div>
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUGFydCAzOglJcmlzIEZsb3dlciBEYXRhIEFuYWx5c2lzIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIyMgMS4gRGF0YSBhbmFseXNpcyB0byBiZSBjb25kdWN0ZWQJaW4JUi4KClRoZQlkYXRhIHNldCB1c2VkIGlzIGJ1aWx0LWluIHRoZSBzdHVkaW8gUiBwYWNrYWdlLiBJdCBpcyBjYWxsZWQgdGhlICJFZGdhciBBbmRlcnNvbidzCUlyaXMJRGF0YSIJc2V0LglUaGUJZGF0YSBpcyBpbiAnZGF0YSBmcmFtZScgZm9ybWF0IGFuZAluYW1lZAknaXJpcycuCVR5cGUgJ2lyaXMnCWluIFIgSGVscAl0byBmaW5kCW91dAltb3JlIGFib3V0IHRoZSBkYXRhCXNldC4KCiMjIyMgYS4gUXVvdGUgdGhlIGRlc2NyaXB0aW9uIG9mIHRoZSBkYXRhIHNldCBhcyBmb3VuZCBkZWZhdWx0IFIgSGVscC4KClRoaXMgZmFtb3VzIChGaXNoZXIncyBvciBBbmRlcnNvbidzKSBpcmlzIGRhdGEgc2V0IGdpdmVzIHRoZSBtZWFzdXJlbWVudHMgaW4gY2VudGltZXRlcnMgb2YgdGhlIHZhcmlhYmxlcyBzZXBhbCBsZW5ndGggYW5kIHdpZHRoIGFuZCBwZXRhbCBsZW5ndGggYW5kIHdpZHRoLCByZXNwZWN0aXZlbHksIGZvciA1MCBmbG93ZXJzIGZyb20gZWFjaCBvZiAzIHNwZWNpZXMgb2YgaXJpcy4gVGhlIHNwZWNpZXMgYXJlIElyaXMgc2V0b3NhLCB2ZXJzaWNvbG9yLCBhbmQgdmlyZ2luaWNhLgoKIyMjIyBiLiBQcmVzZW50IHRoZSBkYXRhIGJyaWVmbHkgYnkgaW5kaWNhdGluZyB0aGUgdmFyaWFibGVzIG5hbWVzLCB0aGVpciBzdGF0aXN0aWNhbCBjbGFzcywgdGhlIHNpemUgb2YgdGhlIHZlY3RvcnMgKDFEIGFycmF5cyksIGFuZCBieSBzaG93aW5nIGZpcnN0IDYgbGluZXMgb2YgdmFsdWVzIGZvciBlYWNoIHZhcmlhYmxlcy4KCmBgYHtyfQpzdHIoaXJpcykKYGBgClRoZSBkYXRhIGlzIGNvbXBvc2VkIG9mIDUgZGlmZmVyZW50IHZhcmlhYmxlcy4gVGhlc2UgdmFyaWFibGVzIGFyZToKCiogU2VwYWwuTGVuZ2h0IHdoaWNoIGNvbnRhaW5zIGNvbnRpbnVvdXMgbnVtZXJpYyB2YWx1ZXMKKiBTZXBhbC5XaWR0aCB3aGljaCBjb250YWlucyBjb250aW51b3VzIG51bWVyaWMgdmFsdWVzCiogUGV0YWwuTGVuZ3RoIHdoaWNoIGNvbnRhaW5zIGNvbnRpbnVvdXMgbnVtZXJpYyB2YWx1ZXMKKiBQZXRhbC5XaWR0aCB3aGljaCBjb250YWlucyBjb250aW51b3VzIG51bWVyaWMgdmFsdWVzCiogU3BlY2llcyB3aGljaCBjb250YWlucyBjYXRlZ29yaWNhbCB2YWx1ZXMKIApgYGB7cn0KbnJvdyhpcmlzKQpgYGAKClRoZXJlIGFyZSBhIHRvdGFsIG9mIDE1MCByZWNvcmRzLiBXZSBjYW4gc2VlIHRoZSBmaXJzdCBzaXg6CgpgYGB7cn0KaGVhZChpcmlzLCA2KQpgYGAKIyMjIyAyLiBDYWxjdWxhdGUgYW5kIHByZXNlbnQgdGhlIHN0YW5kYXJkIGRlc2NyaXB0aXZlIHN0YXRpc3RpY3MgKGNlbnRyYWwgYW5kIGRpc3BlcnNpb24pIGZvciBhbGwgNCBudW1lcmljYWwgdmFyaWFibGVzLgoKYGBge3J9Cm51bS52YXJzIDwtIGlyaXNbLDE6NF0Kc3VtbWFyeShudW0udmFycykKYGBgCipOZWVkcyBkaXNjdXNzaW9uKgoKKlBsb3RzIGJlbG93IG1heWJlIG5vdCBuZWVkZWQqCgpgYGB7cn0KZm9yIChpIGluIDE6bGVuZ3RoKG51bS52YXJzKSkgewogICAgICAgIGJveHBsb3QobnVtLnZhcnNbLGldLCBtYWluPW5hbWVzKG51bS52YXJzW2ldKSwgdHlwZT0ibCIpCgp9CmBgYAojIyMgMy4gQ29uc2lkZXIgYWxsIHBvc3NpYmxlIHNjYXR0ZXIgcGxvdHMgb2YgdGhlIDQgbnVtZXJpY2FsIHZhcmlhYmxlcyBhZ2FpbnN0IG9uZSBhbm90aGVyLgoKIyMjIyAxLiBIb3cgbWFueSBwbG90cyBhcmUgcG9zc2libGUgaW4gdGhlb3J5PyBIb3cgbWFueSBzY2F0dGVyIHBsb3RzIGFyZSB0aGVyZSwgaWYgb25lIHVzZXMgZWFjaCB2YXJpYWJsZSBwYWlyIG9uY2U/IFVzZSBmYWN0b3JpYWwgYmFzZWQgZm9ybXVsYXMuCgpXZSBoYXZlIGEgdG90YWwgb2YgZm91ciB2YXJpYWJsZXMgYW5kIHdlIG5lZWQgdG8gcGljayB0d28gYXQgdGhlIHRpbWUuIFRoZXJlIGlzIG5vIHJlcGV0aXRpb24gYXMgaXQgaXMgbm90IG5lY2Vzc2FyeSB0byBwbG90IG9uZSB2YXJpYWJsZSBhZ2FpbnN0IGl0c2VsZi4gCgokJF57NH1DX3szfT1cZnJhY3tuIX17ayEobi1rKSF9PVxmcmFjezQhfXsyISg0LTIpIX09NiQkCjYgaXMgdGhlIHRvdGFsIG51bWJlciBvZiBjb21iaW5hdGlvbnMgZm9yIGNob29zaW5nIDIgZWxlbWVudHMgYXQgYSB0aW1lIGZyb20gNCBkaXN0aW5jdCBlbGVtZW50cy4KCgojIyMjIDIuIFBsb3QgYWxsIHNjYXR0ZXIgcGxvdHMgdXNpbmcgZWFjaCB2YXJpYWJsZSBwYWlyIG9uY2UuCgpgYGB7cn0KcGFpcnMobnVtLnZhcnMsICAgICAKICAgICAgcGNoID0gMjAsICAKICAgICAgY29sID0gYygiIzA0QURDNSIsICIjQkJEOTMxIiwgIiNGQjNGMTYiKVtpcmlzJFNwZWNpZXNdICwKICAgICAgdXBwZXIucGFuZWw9TlVMTCkKYGBgCgoKIyMjIyAzLiBJbmRpY2F0ZSwgd2hpY2ggcGxvdHMgc2VlbSB0byBleGhpYml0IGEgbGluZWFyIHJlbGF0aW9uc2hpcCAoc3RyYWlnaHQgbGluZSk/IENvbmNsdWRlIGluIG9uZSBzZW50ZW5jZSB3aGF0IHRoZXNlIHJlbGF0aW9uc2hpcHMgaW5kaWNhdGUuCgoxLiBQZXRhbCBsZW5ndGggdnMuIFBldGFsIHdpZHRoCjIuIFNlcGFsIGxlbmd0aCB2cy4gUGV0YWwgbGVuZ3RoCjMuIFNlcGFsIGxlbmdodCB2cy4gUGV0YWwgd2lkdGgKCiMjIyA0LgoKIyMjIyAxLiBDcmVhdGUgKHJlbGF0aXZlKSBmcmVxdWVuY3kgaGlzdG9ncmFtcyBmb3IgZWFjaCB2YXJpYWJsZS4KCmBgYHtyfQpoaXN0KGlyaXMkU2VwYWwuV2lkdGgsIGZyZXE9VFJVRSkKYGBgCgpgYGB7cn0KaGlzdChpcmlzJFNlcGFsLkxlbmd0aCwgZnJlcT1UUlVFKQpgYGAKCmBgYHtyfQpoaXN0KGlyaXMkUGV0YWwuTGVuZ3RoLCBmcmVxPVRSVUUpCmBgYAoKYGBge3J9Cmhpc3QoaXJpcyRQZXRhbC5XaWR0aCwgZnJlcT1UUlVFKQpgYGAKCgojIyMjIDIuIFdoaWNoIHZhcmlhYmxlIGFwcGVhcnMgdG8gYmUgbm9ybWFsbHkgZGlzdHJpYnV0ZWQ/IEJlbG93IHRoaXMgd2lsbCBiZSB2YXJpYWJsZSBYLgoKU2VwYWwgd2lkdGgKCiMjIyMgMy4gSXNvbGF0ZSB0aGUgdmFyaWFibGUgd2hpY2ggYXBwZWFycyBub3JtYWxseSBkaXN0cmlidXRlZCwgWC4gQmFzZWQgb24gaXRzIG1lYW4gYW5kIGl0cyBzdGFuZGFyZCBkZXZpYXRpb24sIGRlZmluZSAoaW4gYSBmb3JtdWxhKSB0aGUgbW9kZWwgbm9ybWFsIHByb2JhYmlsaXR5IGRlbnNpdHkgZnVuY3Rpb24gYW5kIHBsb3QgaXQuCgpgYGB7cn0KWCA8LSBpcmlzJFNlcGFsLldpZHRoCgpYLm1lYW4gPC0gbWVhbihYKQoKWC5tZWFuCmBgYAoKVGhlIG1lYW4gaXMgJFxtdT0zLjA1NzMzMyQKCmBgYHtyfQpYLnNkIDwtIHNkKFgpCgpYLnNkCmBgYAoKVGhlIHN0YW5kYXJkIGRldmlhdGlvbiBpcyAkXHNpZ21hPTAuNDM1ODY2MyQKCiAkJGYoeCk9XGZyYWN7MX17XHNpZ21hXHNxcnR7MlxwaX19ZV57LVxmcmFjeyh4LVxtdSleezJ9fXsyXHNpZ21hXnsyfX19JCQKPHNwYW4gc3R5bGU9ImNvbG9yOiByZWQ7Ij5EbyB5b3UgdGhpbmsgdGhhdCAiZGVmaW5lIChpbiBhIGZvcm11bGEpIiBtZWFucyB3ZSBoYXZlIHRvIG1ha2UgaXQgZXhwbGljaXQ/PC9zcGFuPgo8YnIvPgo8c3BhbiBzdHlsZT0iY29sb3I6IGJsdWU7Ij5Ib25lc3RseSBJIGhhdmUgbm8gaWRlYSDCr1xcXF8o44OEKVxfL8KvPC9zcGFuPgoKSW4gUiB3ZSBjYW4gdXNlIHRoZSBgZG5vcm1gIGZ1bmN0aW9uLgoKYGBge3J9CnggPC0gc2VxKDEsIDUsIGxlbmd0aD0xNTApCnkgPC0gZG5vcm0oeCwgbWVhbj1YLm1lYW4sIHNkPVguc2QpCnBsb3QoeCwgeSwgdHlwZT0nbCcpCmBgYAoKIyMjIDUuIENvbnNpZGVyIHRoZSBkYXRhIGluIFggYXMgYSBwb3B1bGF0aW9uIGFuZCBhc3N1bWUgaXQgaXMgbm9ybWFsbHkgZGlzdHJpYnV0ZWQuIEVzdGltYXRlIHRoZSBwcm9iYWJpbGl0eSB0aGF0IGlyaXMgZmxvd2VycyBoYXZlOgoKPHNwYW4gc3R5bGU9ImNvbG9yOiBibHVlOyI+V2hhdCBkbyB5b3UgdGhpbmsgYWJvdXQgdGhpcyBvbmU/IEkgYW0ganVzdCBjb2RpbmcgbXkgd2F5IHRocm91Z2ggaWRrIGlmIEknbSBkb2luZyBpdCByaWdodDwvc3Bhbj4KCjxici8+CioqKkEgaGVscGVyIGZ1bmN0aW9uIHRvIHJlcHJlc2VudCBkYXRhIGFzIHBlcmNlbnRhZ2U6KioqCgpgYGB7cn0KcGVyY2VudCA8LSBmdW5jdGlvbihudW1iZXIpewogIHJldHVybihzcHJpbnRmKCIlMS4yZiUlIiwgbnVtYmVyICogMTAwKSkKfQpgYGAKPGJyLz4KCiMjIyMgMS4gWCA+IDMKYGBge3J9CmkgPC0gc3VtKHggPiAzKS9sZW5ndGgoeCkKcGFzdGUoaSwgIi0+IiwgcGVyY2VudChpKSkKYGBgCiMjIyMgMi4gMi41IDwgWCA8IDMuNQpgYGB7cn0KaWkgPC0gc3VtKDIuNSA8IHggJiB4IDwgMy41KS9sZW5ndGgoeCkKcGFzdGUoaWksICItPiIsIHBlcmNlbnQoaWkpKQpgYGAKIyMjIyAzLiBYIDwgMi41CmBgYHtyfQppaWkgPC0gc3VtKHggPCAyLjUpL2xlbmd0aCh4KQpwYXN0ZShpaWksICItPiIsIHBlcmNlbnQoaWlpKSkKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUGFydCAzOglJcmlzIEZsb3dlciBEYXRhIEFuYWx5c2lzIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIyBEYXRhIGFuYWx5c2lzIHRvIGJlIGNvbmR1Y3RlZAlpbglSLgoKKlRoZQlkYXRhIHNldCB1c2VkIGlzIGJ1aWx0LWluIHRoZSBzdHVkaW8gUiBwYWNrYWdlLiBJdCBpcyBjYWxsZWQgdGhlICJFZGdhciBBbmRlcnNvbidzCUlyaXMJRGF0YSIJc2V0LglUaGUJZGF0YSBpcyBpbiAnZGF0YSBmcmFtZScgZm9ybWF0IGFuZAluYW1lZAknaXJpcycuCVR5cGUgJ2lyaXMnCWluIFIgSGVscAl0byBmaW5kCW91dAltb3JlIGFib3V0IHRoZSBkYXRhCXNldC4qCgo8YnIvPgoKIyMjIDEpIFF1b3RlIHRoZSBkZXNjcmlwdGlvbiBvZiB0aGUgZGF0YSBzZXQgYXMgZm91bmQgZGVmYXVsdCBSIEhlbHAuIFByZXNlbnQgdGhlIGRhdGEgYnJpZWZseSBieSBpbmRpY2F0aW5nIHRoZSB2YXJpYWJsZXMgbmFtZXMsIHRoZWlyIHN0YXRpc3RpY2FsIGNsYXNzLCB0aGUgc2l6ZSBvZiB0aGUgdmVjdG9ycyAoMUQgYXJyYXlzKSwgYW5kIGJ5IHNob3dpbmcgZmlyc3QgNiBsaW5lcyBvZiB2YWx1ZXMgZm9yIGVhY2ggdmFyaWFibGVzLgo8YnIvPgoKKipUaGlzIGZhbW91cyAoRmlzaGVyJ3Mgb3IgQW5kZXJzb24ncykgaXJpcyBkYXRhIHNldCBnaXZlcyB0aGUgbWVhc3VyZW1lbnRzIGluIGNlbnRpbWV0ZXJzIG9mIHRoZSB2YXJpYWJsZXMgc2VwYWwgbGVuZ3RoIGFuZCB3aWR0aCBhbmQgcGV0YWwgbGVuZ3RoIGFuZCB3aWR0aCwgcmVzcGVjdGl2ZWx5LCBmb3IgNTAgZmxvd2VycyBmcm9tIGVhY2ggb2YgMyBzcGVjaWVzIG9mIGlyaXMuIFRoZSBzcGVjaWVzIGFyZSBJcmlzIHNldG9zYSwgdmVyc2ljb2xvciwgYW5kIHZpcmdpbmljYS4qKgoKYGBge3J9CnN0cihpcmlzKQpgYGAKKipUaGUgZGF0YSBpcyBjb21wb3NlZCBvZiA1IGRpZmZlcmVudCB2YXJpYWJsZXMuIFRoZXNlIHZhcmlhYmxlcyBhcmU6KioKCiogU2VwYWwuTGVuZ2h0IHdoaWNoIGNvbnRhaW5zIGNvbnRpbnVvdXMgbnVtZXJpYyB2YWx1ZXMKKiBTZXBhbC5XaWR0aCB3aGljaCBjb250YWlucyBjb250aW51b3VzIG51bWVyaWMgdmFsdWVzCiogUGV0YWwuTGVuZ3RoIHdoaWNoIGNvbnRhaW5zIGNvbnRpbnVvdXMgbnVtZXJpYyB2YWx1ZXMKKiBQZXRhbC5XaWR0aCB3aGljaCBjb250YWlucyBjb250aW51b3VzIG51bWVyaWMgdmFsdWVzCiogU3BlY2llcyB3aGljaCBjb250YWlucyBjYXRlZ29yaWNhbCB2YWx1ZXMKIApgYGB7cn0KbnJvdyhpcmlzKQpgYGAKCioqVGhlcmUgYXJlIGEgdG90YWwgb2YgMTUwIHJlY29yZHMuIFdlIGNhbiBzZWUgdGhlIGZpcnN0IHNpeDoqKgoKYGBge3J9CmhlYWQoaXJpcywgNikKYGBgCgo8YnIvPgoKIyMjIDIpIENhbGN1bGF0ZSBhbmQgcHJlc2VudCB0aGUgc3RhbmRhcmQgZGVzY3JpcHRpdmUgc3RhdGlzdGljcyAoY2VudHJhbCBhbmQgZGlzcGVyc2lvbikgZm9yIGFsbCA0IG51bWVyaWNhbCB2YXJpYWJsZXMuCgpgYGB7cn0KbnVtLnZhcnMgPC0gaXJpc1ssMTo0XQpzdW1tYXJ5KG51bS52YXJzKQpgYGAKKk5lZWRzIGRpc2N1c3Npb24qCgoqUGxvdHMgYmVsb3cgbWF5YmUgbm90IG5lZWRlZCoKCmBgYHtyfQpmb3IgKGkgaW4gMTpsZW5ndGgobnVtLnZhcnMpKSB7CiAgICAgICAgYm94cGxvdChudW0udmFyc1ssaV0sIG1haW49bmFtZXMobnVtLnZhcnNbaV0pLCB0eXBlPSJsIikKCn0KYGBgCgo8YnIvPgoKIyMjIDMpIENvbnNpZGVyIGFsbCBwb3NzaWJsZSBzY2F0dGVyIHBsb3RzIG9mIHRoZSA0IG51bWVyaWNhbCB2YXJpYWJsZXMgYWdhaW5zdCBvbmUgYW5vdGhlci4KCiMjIyMgaSkgSG93IG1hbnkgcGxvdHMgYXJlIHBvc3NpYmxlIGluIHRoZW9yeT8gSG93IG1hbnkgc2NhdHRlciBwbG90cyBhcmUgdGhlcmUsIGlmIG9uZSB1c2VzIGVhY2ggdmFyaWFibGUgcGFpciBvbmNlPyBVc2UgZmFjdG9yaWFsIGJhc2VkIGZvcm11bGFzLgoKV2UgaGF2ZSBhIHRvdGFsIG9mIGZvdXIgdmFyaWFibGVzIGFuZCB3ZSBuZWVkIHRvIHBpY2sgdHdvIGF0IHRoZSB0aW1lLiBUaGVyZSBpcyBubyByZXBldGl0aW9uIGFzIGl0IGlzIG5vdCBuZWNlc3NhcnkgdG8gcGxvdCBvbmUgdmFyaWFibGUgYWdhaW5zdCBpdHNlbGYuIAoKJCReezR9Q197M309XGZyYWN7biF9e2shKG4taykhfT1cZnJhY3s0IX17MiEoNC0yKSF9PTYkJAoqKjYgaXMgdGhlIHRvdGFsIG51bWJlciBvZiBjb21iaW5hdGlvbnMgZm9yIGNob29zaW5nIDIgZWxlbWVudHMgYXQgYSB0aW1lIGZyb20gNCBkaXN0aW5jdCBlbGVtZW50cy4qKgoKCiMjIyMgaWkpIFBsb3QgYWxsIHNjYXR0ZXIgcGxvdHMgdXNpbmcgZWFjaCB2YXJpYWJsZSBwYWlyIG9uY2UuCgpgYGB7cn0KcGFpcnMobnVtLnZhcnMsICAgICAKICAgICAgcGNoID0gMjAsICAKICAgICAgY29sID0gYygiIzA0QURDNSIsICIjQkJEOTMxIiwgIiNGQjNGMTYiKVtpcmlzJFNwZWNpZXNdICwKICAgICAgdXBwZXIucGFuZWw9TlVMTCkKYGBgCgoKIyMjIyBpaWkpIEluZGljYXRlLCB3aGljaCBwbG90cyBzZWVtIHRvIGV4aGliaXQgYSBsaW5lYXIgcmVsYXRpb25zaGlwIChzdHJhaWdodCBsaW5lKT8gQ29uY2x1ZGUgaW4gb25lIHNlbnRlbmNlIHdoYXQgdGhlc2UgcmVsYXRpb25zaGlwcyBpbmRpY2F0ZS4KCjEuIFBldGFsIGxlbmd0aCB2cy4gUGV0YWwgd2lkdGgKMi4gU2VwYWwgbGVuZ3RoIHZzLiBQZXRhbCBsZW5ndGgKMy4gU2VwYWwgbGVuZ2h0IHZzLiBQZXRhbCB3aWR0aAoKPGJyLz4KCiMjIyA0KQoKIyMjIyBpKSBDcmVhdGUgKHJlbGF0aXZlKSBmcmVxdWVuY3kgaGlzdG9ncmFtcyBmb3IgZWFjaCB2YXJpYWJsZS4KCmBgYHtyfQpoaXN0KGlyaXMkU2VwYWwuV2lkdGgsIGZyZXE9VFJVRSkKYGBgCgpgYGB7cn0KaGlzdChpcmlzJFNlcGFsLkxlbmd0aCwgZnJlcT1UUlVFKQpgYGAKCmBgYHtyfQpoaXN0KGlyaXMkUGV0YWwuTGVuZ3RoLCBmcmVxPVRSVUUpCmBgYAoKYGBge3J9Cmhpc3QoaXJpcyRQZXRhbC5XaWR0aCwgZnJlcT1UUlVFKQpgYGAKCgojIyMjIGlpKSBXaGljaCB2YXJpYWJsZSBhcHBlYXJzIHRvIGJlIG5vcm1hbGx5IGRpc3RyaWJ1dGVkPyBCZWxvdyB0aGlzIHdpbGwgYmUgdmFyaWFibGUgWC4KClNlcGFsIHdpZHRoCgojIyMjIGlpaSkgSXNvbGF0ZSB0aGUgdmFyaWFibGUgd2hpY2ggYXBwZWFycyBub3JtYWxseSBkaXN0cmlidXRlZCwgWC4gQmFzZWQgb24gaXRzIG1lYW4gYW5kIGl0cyBzdGFuZGFyZCBkZXZpYXRpb24sIGRlZmluZSAoaW4gYSBmb3JtdWxhKSB0aGUgbW9kZWwgbm9ybWFsIHByb2JhYmlsaXR5IGRlbnNpdHkgZnVuY3Rpb24gYW5kIHBsb3QgaXQuCgpgYGB7cn0KWCA8LSBpcmlzJFNlcGFsLldpZHRoCgpYLm1lYW4gPC0gbWVhbihYKQoKWC5tZWFuCmBgYAoKKipUaGUgbWVhbiBpcyAkXG11PTMuMDU3MzMzJCoqCgpgYGB7cn0KWC5zZCA8LSBzZChYKQoKWC5zZApgYGAKCioqVGhlIHN0YW5kYXJkIGRldmlhdGlvbiBpcyAkXHNpZ21hPTAuNDM1ODY2MyQqKgoKICQkZih4KT1cZnJhY3sxfXtcc2lnbWFcc3FydHsyXHBpfX1lXnstXGZyYWN7KHgtXG11KV57Mn19ezJcc2lnbWFeezJ9fX0kJAo8c3BhbiBzdHlsZT0iY29sb3I6IHJlZDsiPkRvIHlvdSB0aGluayB0aGF0ICJkZWZpbmUgKGluIGEgZm9ybXVsYSkiIG1lYW5zIHdlIGhhdmUgdG8gbWFrZSBpdCBleHBsaWNpdD88L3NwYW4+Cjxici8+CjxzcGFuIHN0eWxlPSJjb2xvcjogYmx1ZTsiPkhvbmVzdGx5IEkgaGF2ZSBubyBpZGVhIMKvXFxcXyjjg4QpXF8vwq88L3NwYW4+CgpJbiBSIHdlIGNhbiB1c2UgdGhlIGBkbm9ybWAgZnVuY3Rpb24uCgpgYGB7cn0KeCA8LSBzZXEoMSwgNSwgbGVuZ3RoPTE1MCkKeSA8LSBkbm9ybSh4LCBtZWFuPVgubWVhbiwgc2Q9WC5zZCkKcGxvdCh4LCB5LCB0eXBlPSdsJykKYGBgCgo8YnIvPgoKIyMjIDUpIENvbnNpZGVyIHRoZSBkYXRhIGluIFggYXMgYSBwb3B1bGF0aW9uIGFuZCBhc3N1bWUgaXQgaXMgbm9ybWFsbHkgZGlzdHJpYnV0ZWQuIEVzdGltYXRlIHRoZSBwcm9iYWJpbGl0eSB0aGF0IGlyaXMgZmxvd2VycyBoYXZlOgoKPHNwYW4gc3R5bGU9ImNvbG9yOiBibHVlOyI+V2hhdCBkbyB5b3UgdGhpbmsgYWJvdXQgdGhpcyBvbmU/IEkgYW0ganVzdCBjb2RpbmcgbXkgd2F5IHRocm91Z2ggaWRrIGlmIEknbSBkb2luZyBpdCByaWdodDwvc3Bhbj4KCjxici8+CgoqKipBIGhlbHBlciBmdW5jdGlvbiB0byByZXByZXNlbnQgZGF0YSBhcyBwZXJjZW50YWdlOioqKgoKYGBge3J9CnBlcmNlbnQgPC0gZnVuY3Rpb24obnVtYmVyKXsKICByZXR1cm4oc3ByaW50ZigiJTEuMmYlJSIsIG51bWJlciAqIDEwMCkpCn0KYGBgCjxici8+CgojIyMjIGkpIFggPiAzCmBgYHtyfQppIDwtIHN1bSh4ID4gMykvbGVuZ3RoKHgpCnBhc3RlKGksICItPiIsIHBlcmNlbnQoaSkpCmBgYAojIyMjIGlpKSAyLjUgPCBYIDwgMy41CmBgYHtyfQppaSA8LSBzdW0oMi41IDwgeCAmIHggPCAzLjUpL2xlbmd0aCh4KQpwYXN0ZShpaSwgIi0+IiwgcGVyY2VudChpaSkpCmBgYAojIyMjIGlpaSkgWCA8IDIuNQpgYGB7cn0KaWlpIDwtIHN1bSh4IDwgMi41KS9sZW5ndGgoeCkKcGFzdGUoaWlpLCAiLT4iLCBwZXJjZW50KGlpaSkpCmBgYAoKPGJyLz4KCiMjIyA2KSBUYWtlIHRoZSBzY2F0dGVyIHBsb3RzIG9mIHRoZSB2YXJpYWJsZSBYIHZlcnN1cyBpKSB0aGUgcGV0YWwgbGVuZ3RoIGFuZCBpaSkgdGhlIHNlcGFsIGxlbmd0aC4gTm90aWNlIGluIGVhY2ggcGxvdCB0aGUgZGF0YSBwb2ludHMgYXBwZWFyIHRvIGJlIGNsdXN0ZXJlZCBpbiB0d28gY2x1c3RlcnMuIFB1dCBhIHRocmVzaG9sZCAobGltaXQpIHRvIGlzb2xhdGUgdGhlIGRhdGEgcG9pbnRzIG9mIHRoZSBmaXJzdCBjbHVzdGVyIGNvcnJlc3BvbmRpbmcgdG8gbG93ZXIgdmFsdWVzIG9mIHBldGFsIGxlbmd0aCBhbmQgcGV0YWwgd2lkdGguIEV4YW1pbmUgaWYgdGhlc2UgYmVsb25nIHRvIHNhbWUgc3BlY2llcywgYnkgY2hlY2tpbmcgdGhlIGRhdGEgdmFyaWFibGUgJ1NwZWNpZXMnLgoKPGJyLz4KCiMjIyA3KQoKIyMjIyBpKSBFc3RhYmxpc2ggdGhlIDk1JSBjb25maWRlbmNlIGludGVydmFsIGZvciB0aGUgdHJ1ZSBtZWFuIG9mIFggYmFzZWQgb24gYWxsIHRoZSBYIGRhdGEuCgojIyMjIGlpKSBUYWtlIGEgc3Vic2V0LCBTLCBvZiBYIHRoYXQgaW5jbHVkZXMgb25seSB0aGUgWCB2YWx1ZXMgb2YgdGhlIHNwZWNpZXMgdGhhdCB3YXMgaWRlbnRpZmllZCBpbiAzLjYuIEVzdGFibGlzaCB0aGUgOTUlIGNvbmZpZGVuY2UgaW50ZXJ2YWwgZm9yIHRoZSB0cnVlIG1lYW4gWCBiYXNlZCBvbiB0aGlzIHNhbXBsZSBzdWJzZXQuCgojIyMjIGlpaSkgQXJlIGJvdGggc2FtcGxlcyBsYXJnZSBlbm91Z2ggZm9yIHN1Y2ggc3RhdGlzdGljYWwgc3R1ZHk/IFdoYXQgdHlwZSBvZiBzdGF0aXN0aWNhbCBzdHVkeSBpcyB0aGlzLCB3aGF0IGRvZXMgaXQgY29uc2lzdCBpbiwgYW5kIGhvdyBkb2VzIGl0IGNvbXBhcmUgdG8gdGhlIGFwcHJvYWNoIHVzZWQgaW4gMy41Pwo=</div>
 
 
 
