@@ -3,7 +3,7 @@ title: "Part 3:	Iris Flower Data Analysis"
 output: html_notebook
 ---
 
-## Data analysis to be conducted	in	R.
+## Data analysis to be conducted in R.
 
 *The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.*
 
@@ -43,18 +43,49 @@ head(iris, 6)
 num.vars <- iris[,1:4]
 summary(num.vars)
 ```
-*Needs discussion*
-
-*Plots below maybe not needed*
+- **Sepal length** spans from a minimum of 4.3cm to 7.9cm. The mean value is 5.843cm while the median is 5.8cm. The mean and median values are very close to each other, this could imply that the data is symmetrical. 
+```{r}
+boxplot(iris$Sepal.Length, horizontal=TRUE)
+```
+In the boxplot, we notice that the data is right skewed. We can calculate the standard deviation to see the dispersion of the feature.
+```{r}
+sd(iris$Sepal.Length)
+```
+Sepal length seems to exhibit a low variation.
+<br/>
+<br/>
+- **Sepal width** as well as sepal length, has a median value which is very close to the mean. The 1st and 3rd quartiles seem to be equidistant.
 
 ```{r}
-for (i in 1:length(num.vars)) {
-        boxplot(num.vars[,i], main=names(num.vars[i]), type="l")
-
-}
+boxplot(iris$Sepal.Width, horizontal=TRUE)
 ```
-
+Sepal width appears to be normally distributed and also shows few outliers.
+```{r}
+sd(iris$Sepal.Width)
+```
+The data has a standard deviation of only 0.43cm. 
 <br/>
+<br/>
+- **Petal length** seems to be less symmetrical as the mean and median values differ: the median is significantly higher than the mean. Altough, we can also notice that the 1st quartile has a small value compared to the other quartiles meaning that there are many data points included in the small range.
+```{r}
+boxplot(iris$Petal.Length, horizontal=TRUE)
+```
+In fact, we can see that the data is right skewed.
+```{r}
+sd(iris$Petal.Length)
+```
+It also has a higher dispersion than the two features previously examined.
+<br />
+<br />
+- **Petal width** has similar central statistics to petal length, and as well shows many data points in the small range of values.
+```{r}
+boxplot(iris$Petal.Width, horizontal=TRUE)
+```
+In fact the distribution looks similar to the one of petal length.
+```{r}
+sd(iris$Petal.Width)
+```
+In this case the standard deviation has a smaller value but it is to be expected taken the scale into consideration.
 
 ### 3) Consider all possible scatter plots of the 4 numerical variables against one another.
 
@@ -62,7 +93,7 @@ for (i in 1:length(num.vars)) {
 
 We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself. 
 
-$$^{4}C_{3}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
+$$^{4}C_{2}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
 **6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.**
 
 
@@ -84,24 +115,26 @@ pairs(num.vars,
 
 <br/>
 
+*needs sentence about relationships*
+
 ### 4)
 
 #### i) Create (relative) frequency histograms for each variable.
 
 ```{r}
-hist(iris$Sepal.Width, freq=TRUE)
+hist(iris$Sepal.Width, freq=TRUE, main='Histogram of sepal width', xlab='Sepal width')
 ```
 
 ```{r}
-hist(iris$Sepal.Length, freq=TRUE)
+hist(iris$Sepal.Length, freq=TRUE, main='Histogram of sepal length', xlab='Sepal length')
 ```
 
 ```{r}
-hist(iris$Petal.Length, freq=TRUE)
+hist(iris$Petal.Length, freq=TRUE, main='Histogram of petal length', xlab='Petal length')
 ```
 
 ```{r}
-hist(iris$Petal.Width, freq=TRUE)
+hist(iris$Petal.Width, freq=TRUE, main='Histogram of Petal width', xlab='Petal width')
 ```
 
 
@@ -138,8 +171,9 @@ In R we can use the `dnorm` function.
 
 ```{r}
 x.axis <- seq(1, 5, length=150)
-y <- dnorm(x.axis, mean=X.mean, sd=X.sd)
-plot(x, y, type='l')
+y.axis <- dnorm(x.axis, mean=X.mean, sd=X.sd)
+plot(x.axis, y.axis, type='l', main="Norma distribution",
+  xlab="X", ylab="X ~ N(3.06, 0.44)")
 ```
 
 <br/>
@@ -174,7 +208,8 @@ ii <- sum(2.5 < X & X < 3.5)/length(x)
 paste(ii, "->", percent(ii))
 ```
 ```{r}
-percent(pnorm(3.5,mean = X.mean, sd =X.sd)-pnorm(2.5,mean = X.mean, sd =X.sd))
+percent(pnorm(3.5, mean=X.mean, sd=X.sd, lower.tail=TRUE) - 
+          pnorm(2.5,mean=X.mean, sd=X.sd, lower.tail=TRUE))
 ```
 #### iii) X < 2.5
 ```{r}
