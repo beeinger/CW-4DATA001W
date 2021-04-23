@@ -224,7 +224,40 @@ percent(pnorm(2.5, mean=X.mean, sd=X.sd, lower.tail=TRUE))
 
 ### 6) Take the scatter plots of the variable X versus i) the petal length and ii) the sepal length. Notice in each plot the data points appear to be clustered in two clusters. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
 
+<span style="color: red;">Issue with this exercise: In task 4 we are to find the one that looks normally distributed. I think that the only one that looks normally distributed is Sepal Width, so it is our X in this case.</span>
+
+<span style="color: red;">By plotting the scatterplot of X with i) petal length and ii) sepal length we cannot get the clusters required as there looks to be no linear relationship. See below the 2 plots, one with our actual X and the other one with Petal Width, the variable I assume must be used for this task.</span>
+
+<span style="color: red;">"Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width" Why does he mention petal width? It is not normally distributed so it cannot be X and we are also not required to use it for the scatterplots: I think there s a mistake with this exercise!</span>
+
+## *with X (sepal width)*
+```{r}
+plot(X, iris$Petal.Length, pch=19)
+```
+<span style="color: red;">to be honest this plot is ok because we can put a threshold of y<2.3 for example</span>
+```{r}
+plot(X, iris$Sepal.Length, pch=19)
+```
+<span style="color: red;">But on this one there is no way to cluster</span>
+
+## *with petal width*
+```{r}
+plot(iris$Petal.Width, iris$Petal.Length, pch=19)
+```
+
+```{r}
+plot(iris$Petal.Width, iris$Sepal.Length, pch=19)
+```
+<span style="color: red;">Petal width seems to be much more suited for this exercise as it is easy to put a threshold and isolate</span>
 <br/>
+
+#### 2. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
+
+```{r}
+indices <- iris$Petal.Width < 0.8 & iris$Petal.Length < 2.5
+unique(iris$Species[indices])
+```
+They all seem to belong to the same species setosa.
 
 ### 7)
 
