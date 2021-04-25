@@ -26,10 +26,10 @@ str(iris)
 * Species which contains categorical values
  
 ```{r}
-nrow(iris)
+total_records <- nrow(iris)
 ```
 
-**There are a total of 150 records. We can see the first six:**
+**There are a total of `r total_records` records. We can see the first six:**
 
 ```{r}
 head(iris, 6)
@@ -49,8 +49,10 @@ boxplot(iris$Sepal.Length, horizontal=TRUE)
 ```
 In the boxplot, we notice that the data is right skewed. We can calculate the standard deviation to see the dispersion of the feature.
 ```{r}
-sd(iris$Sepal.Length)
+sd_s_l <- sd(iris$Sepal.Length)
 ```
+**The standard deviation of Sepal Length is $\sigma=`r sd_s_l`$**.
+
 Sepal length seems to exhibit a low variation.
 <br/>
 <br/>
@@ -61,9 +63,10 @@ boxplot(iris$Sepal.Width, horizontal=TRUE)
 ```
 Sepal width appears to be normally distributed and also shows few outliers.
 ```{r}
-sd(iris$Sepal.Width)
+sd_s_w <- sd(iris$Sepal.Width)
 ```
-The data has a standard deviation of only 0.43cm. 
+**The standard deviation of Sepal Width is $\sigma=`r sd_s_w`$**.
+
 <br/>
 <br/>
 - **Petal length** seems to be less symmetrical as the mean and median values differ: the median is significantly higher than the mean. Altough, we can also notice that the 1st quartile has a small value compared to the other quartiles meaning that there are many data points included in the small range.
@@ -72,8 +75,10 @@ boxplot(iris$Petal.Length, horizontal=TRUE)
 ```
 In fact, we can see that the data is right skewed.
 ```{r}
-sd(iris$Petal.Length)
+sd_p_l <- sd(iris$Petal.Length)
 ```
+**The standard deviation of Petal Length is $\sigma=`r sd_p_l`$**.
+
 It also has a higher dispersion than the two features previously examined.
 <br />
 <br />
@@ -83,8 +88,10 @@ boxplot(iris$Petal.Width, horizontal=TRUE)
 ```
 In fact the distribution looks similar to the one of petal length.
 ```{r}
-sd(iris$Petal.Width)
+sd_p_w <- sd(iris$Petal.Width)
 ```
+**The standard deviation of Petal Width is $\sigma=`r sd_p_w`$**.
+
 In this case the standard deviation has a smaller value but it is to be expected taken the scale into consideration.
 
 ### 3) Consider all possible scatter plots of the 4 numerical variables against one another.
@@ -93,8 +100,14 @@ In this case the standard deviation has a smaller value but it is to be expected
 
 We have a total of four variables and we need to pick two at the time. There is no repetition as it is not necessary to plot one variable against itself. 
 
-$$^{4}C_{2}=\frac{n!}{k!(n-k)!}=\frac{4!}{2!(4-2)!}=6$$
-**6 is the total number of combinations for choosing 2 elements at a time from 4 distinct elements.**
+$$^{4}C_{2}=\frac{n!}{k!(n-k)!}$$
+```{r}
+  n <- 4
+  k <- 2
+  max_plots <- factorial(n)/(factorial(k)*factorial(n-k))
+```
+
+**`r max_plots` is the total number of combinations for choosing `r k` elements at a time from `r n` distinct elements.**
 
 
 #### ii) Plot all scatter plots using each variable pair once.
@@ -148,19 +161,15 @@ Sepal width
 X <- iris$Sepal.Width
 
 X.mean <- mean(X)
-
-X.mean
 ```
 
-**The mean is $\mu=3.057333$**
+**The mean is $\mu=`r X.mean`$**
 
 ```{r}
 X.sd <- sd(X)
-
-X.sd
 ```
 
-**The standard deviation is $\sigma=0.4358663$**
+**The standard deviation is $\sigma=`r X.sd`$**
 
  $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
 <span style="color: red;">Do you think that "define (in a formula)" means we have to make it explicit?</span>
@@ -195,30 +204,37 @@ percent <- function(number){
 
 #### i) X > 3
 ```{r}
-i <- sum(X > 3)/length(x)
-paste(i, "->", percent(i))
+p_i <- sum(X > 3)/length(X)
 ```
+The probability is **`r p_i`** -> **`r percent(p_i)`**.
+
 ```{r}
-percent(pnorm(3, mean=X.mean, sd=X.sd, lower.tail=FALSE))
+pn_i <- pnorm(3, mean=X.mean, sd=X.sd, lower.tail=FALSE)
 ```
+The probability of normal distribution is **`r pn_i`** -> **`r percent(pn_i)`**.
 
 #### ii) 2.5 < X < 3.5
 ```{r}
-ii <- sum(2.5 < X & X < 3.5)/length(x)
-paste(ii, "->", percent(ii))
+p_ii <- sum(2.5 < X & X < 3.5)/length(X)
 ```
+The probability is **`r p_ii`** -> **`r percent(p_ii)`**.
+
 ```{r}
-percent(pnorm(3.5, mean=X.mean, sd=X.sd, lower.tail=TRUE) - 
+pn_ii <- (pnorm(3.5, mean=X.mean, sd=X.sd, lower.tail=TRUE) - 
           pnorm(2.5,mean=X.mean, sd=X.sd, lower.tail=TRUE))
 ```
+The probability of normal distribution is **`r pn_ii`** -> **`r percent(pn_ii)`**.
+
 #### iii) X < 2.5
 ```{r}
-iii <- sum(X < 2.5)/length(x)
-paste(iii, "->", percent(iii))
+p_iii <- sum(X < 2.5)/length(X)
 ```
+The probability is **`r p_iii`** -> **`r percent(p_iii)`**.
+
 ```{r}
-percent(pnorm(2.5, mean=X.mean, sd=X.sd, lower.tail=TRUE))
+pn_iii <- pnorm(2.5, mean=X.mean, sd=X.sd, lower.tail=TRUE)
 ```
+The probability of normal distribution is **`r pn_iii`** -> **`r percent(pn_iii)`**.
 
 <br/>
 
@@ -255,14 +271,34 @@ plot(iris$Petal.Width, iris$Sepal.Length, pch=19)
 
 ```{r}
 indices <- iris$Petal.Width < 0.8 & iris$Petal.Length < 2.5
-unique(iris$Species[indices])
+species <- unique(iris$Species[indices])
 ```
-They all seem to belong to the same species setosa.
+They all seem to belong to the same species - **`r species`**.
 
 ### 7)
 
 #### i) Establish the 95% confidence interval for the true mean of X based on all the X data.
 
+```{r}
+margin_error <- qnorm(.95)*(X.sd/sqrt(length(X)))
+ll_7_i <- X.mean - margin_error
+ul_7_i <- X.mean + margin_error
+```
+
+The **lower limit is *`r ll_7_i`* ** and the **upper limit is *`r ul_7_i`* **
+
 #### ii) Take a subset, S, of X that includes only the X values of the species that was identified in 3.6. Establish the 95% confidence interval for the true mean X based on this sample subset.
 
+```{r}
+S <- X[indices]
+S.mean <- mean(S)
+S.sd <- sd(S)
+margin_error <- qnorm(.95)*(S.sd/sqrt(length(S)))
+ll_7_ii <- S.mean - margin_error
+ul_7_ii <- S.mean + margin_error
+```
+The **lower limit is *`r ll_7_ii`* ** and the **upper limit is *`r ul_7_ii`* **
+
 #### iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?
+
+<span style="color: red;">I am not good at explanations xD</span>
