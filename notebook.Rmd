@@ -281,11 +281,11 @@ They all seem to belong to the same species - **`r species`**.
 
 ```{r}
 margin_error <- qnorm(.95)*(X.sd/sqrt(length(X)))
-ll_7_i <- X.mean - margin_error
-ul_7_i <- X.mean + margin_error
+ll_i <- X.mean - margin_error
+ul_i <- X.mean + margin_error
 ```
 
-The **lower limit is *`r ll_7_i`* ** and the **upper limit is *`r ul_7_i`* **
+The **lower limit is *`r ll_i`* ** and the **upper limit is *`r ul_i`* **
 
 #### ii) Take a subset, S, of X that includes only the X values of the species that was identified in 3.6. Establish the 95% confidence interval for the true mean X based on this sample subset.
 
@@ -294,10 +294,10 @@ S <- X[indices]
 S.mean <- mean(S)
 S.sd <- sd(S)
 margin_error <- qnorm(.95)*(S.sd/sqrt(length(S)))
-ll_7_ii <- S.mean - margin_error
-ul_7_ii <- S.mean + margin_error
+ll_ii <- S.mean - margin_error
+ul_ii <- S.mean + margin_error
 ```
-The **lower limit is *`r ll_7_ii`* ** and the **upper limit is *`r ul_7_ii`* **
+The **lower limit is *`r ll_ii`* ** and the **upper limit is *`r ul_ii`* **
 
 #### iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?
 
