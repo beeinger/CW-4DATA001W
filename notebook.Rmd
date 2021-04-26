@@ -266,7 +266,7 @@ They all seem to belong to the same species - **`r species`**.
 #### i) Establish the 95% confidence interval for the true mean of X based on all the X data.
 
 ```{r}
-margin_error <- qnorm(.95)*(X.sd/sqrt(length(X)))
+margin_error <- qnorm(.975)*(X.sd/sqrt(length(X)))
 ll_i <- X.mean - margin_error
 ul_i <- X.mean + margin_error
 ```
@@ -279,7 +279,7 @@ The **lower limit is *`r ll_i`* ** and the **upper limit is *`r ul_i`* **
 S <- X[indices]
 S.mean <- mean(S)
 S.sd <- sd(S)
-margin_error <- qnorm(.95)*(S.sd/sqrt(length(S)))
+margin_error <- qnorm(.975)*(S.sd/sqrt(length(S)))
 ll_ii <- S.mean - margin_error
 ul_ii <- S.mean + margin_error
 ```
