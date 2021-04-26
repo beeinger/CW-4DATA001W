@@ -128,7 +128,7 @@ pairs(num.vars,
 
 <br/>
 
-*needs sentence about relationships*
+<span style="color: red;">Explanation needed</span>
 
 ### 4)
 
@@ -172,24 +172,19 @@ X.sd <- sd(X)
 **The standard deviation is $\sigma=`r X.sd`$**
 
  $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
-<span style="color: red;">Do you think that "define (in a formula)" means we have to make it explicit?</span>
-<br/>
-<span style="color: blue;">Honestly I have no idea ¯\\\_(ツ)\_/¯</span>
 
 In R we can use the `dnorm` function.
 
 ```{r}
 x.axis <- seq(1, 5, length=150)
 y.axis <- dnorm(x.axis, mean=X.mean, sd=X.sd)
-plot(x.axis, y.axis, type='l', main="Norma distribution",
+plot(x.axis, y.axis, type='l', main="Normal distribution",
   xlab="X", ylab="X ~ N(3.06, 0.44)")
 ```
 
 <br/>
 
 ### 5) Consider the data in X as a population and assume it is normally distributed. Estimate the probability that iris flowers have:
-
-<span style="color: blue;">What do you think about this one? I am just coding my way through idk if I'm doing it right</span>
 
 <br/>
 
@@ -240,21 +235,14 @@ The probability of normal distribution is **`r pn_iii`** -> **`r percent(pn_iii)
 
 ### 6) Take the scatter plots of the variable X versus i) the petal length and ii) the sepal length. Notice in each plot the data points appear to be clustered in two clusters. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
 
-<span style="color: red;">Issue with this exercise: In task 4 we are to find the one that looks normally distributed. I think that the only one that looks normally distributed is Sepal Width, so it is our X in this case.</span>
-
-<span style="color: red;">By plotting the scatterplot of X with i) petal length and ii) sepal length we cannot get the clusters required as there looks to be no linear relationship. See below the 2 plots, one with our actual X and the other one with Petal Width, the variable I assume must be used for this task.</span>
-
-<span style="color: red;">"Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width" Why does he mention petal width? It is not normally distributed so it cannot be X and we are also not required to use it for the scatterplots: I think there s a mistake with this exercise!</span>
-
 ## *with X (sepal width)*
 ```{r}
 plot(X, iris$Petal.Length, pch=19)
 ```
-<span style="color: red;">to be honest this plot is ok because we can put a threshold of y<2.3 for example</span>
+
 ```{r}
 plot(X, iris$Sepal.Length, pch=19)
 ```
-<span style="color: red;">But on this one there is no way to cluster</span>
 
 ## *with petal width*
 ```{r}
@@ -264,8 +252,6 @@ plot(iris$Petal.Width, iris$Petal.Length, pch=19)
 ```{r}
 plot(iris$Petal.Width, iris$Sepal.Length, pch=19)
 ```
-<span style="color: red;">Petal width seems to be much more suited for this exercise as it is easy to put a threshold and isolate</span>
-<br/>
 
 #### 2. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
 
@@ -301,4 +287,4 @@ The **lower limit is *`r ll_ii`* ** and the **upper limit is *`r ul_ii`* **
 
 #### iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?
 
-<span style="color: red;">I am not good at explanations xD</span>
+<span style="color: red;">Explanation needed</span>
