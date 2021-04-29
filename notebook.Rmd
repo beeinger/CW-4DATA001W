@@ -128,7 +128,8 @@ pairs(num.vars,
 
 <br/>
 
-<span style="color: red;">Explanation needed</span>
+The positive linear relationship of the above variables implies that they increase by approximately the same rate as the other variables changes by one unit.
+
 
 ### 4)
 
@@ -153,7 +154,13 @@ hist(iris$Petal.Width, freq=TRUE, main='Histogram of Petal width', xlab='Petal w
 
 #### ii) Which variable appears to be normally distributed? Below this will be variable X.
 
-Sepal width
+Sepal width appears to be normally distributed as both the histogram and boxplot resemble the shape of a normal distribution. We can also verify this visually with a quantile-quantile plot.
+
+```{r}
+qqnorm(iris$Sepal.Width, pch=1)
+qqline(iris$Sepal.Width, col="steelblue", lwd=2)
+```
+If the data are normally distributed, the points will plot along an approximately straight line. We can see that the sepal length of our iris samples is following along the straight line.
 
 #### iii) Isolate the variable which appears normally distributed, X. Based on its mean and its standard deviation, define (in a formula) the model normal probability density function and plot it.
 
