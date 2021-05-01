@@ -5,7 +5,7 @@ output: html_notebook
 
 ## Data analysis to be conducted in R.
 
-*The	data set used is built-in the studio R package. It is called the "Edgar Anderson's	Iris	Data"	set.	The	data is in 'data frame' format and	named	'iris'.	Type 'iris'	in R Help	to find	out	more about the data	set.*
+*The data set used is built-in the studio R package. It is called the "Edgar Anderson's Iris Data" set. The data is in 'data frame' format and named 'iris'. Type 'iris' in R Help to find out more about the data set.*
 
 <br/>
 
@@ -170,17 +170,19 @@ X <- iris$Sepal.Width
 X.mean <- mean(X)
 ```
 
-**The mean is $\mu=`r X.mean`$**
+**The mean is $\hat{x}=`r X.mean`$**
 
 ```{r}
 X.sd <- sd(X)
 ```
 
-**The standard deviation is $\sigma=`r X.sd`$**
+**The standard deviation is $s=`r X.sd`$**
+
+According to the central limit theorem, with a large enough sample we can use the sample mean and the sample standard deviation instead of the population values. Hence, we can define a formula to model the normal probability density function given that $\mu\approx\hat{x}=3.06$ and $\sigma\approx\text{s}=0.44$.
 
  $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
 
-In R we can use the `dnorm` function.
+We can use the `dnorm` function to display the obtained normal distribution.
 
 ```{r}
 x.axis <- seq(1, 5, length=150)
@@ -204,60 +206,64 @@ percent <- function(number){
 ```
 <br/>
 
+Assuming that X is normally distributed, we can calculate the expected probabilities using the mean and standard deviation obtained previously.
+
 #### i) X > 3
-```{r}
-p_i <- sum(X > 3)/length(X)
-```
-The probability is **`r p_i`** -> **`r percent(p_i)`**.
+
 
 ```{r}
 pn_i <- pnorm(3, mean=X.mean, sd=X.sd, lower.tail=FALSE)
 ```
-The probability of normal distribution is **`r pn_i`** -> **`r percent(pn_i)`**.
+
+The expected probability of sepal width being higher than 3cm assuming that it is normally distributed is **`r pn_i`** -> **`r percent(pn_i)`**.
+
+```{r}
+p_i <- sum(X > 3)/length(X)
+```
+
+In our sample, the observed probability of iris flowers that have a sepal width higher than 3 is **`r p_i`** -> **`r percent(p_i)`**. 
+<br/>
 
 #### ii) 2.5 < X < 3.5
-```{r}
-p_ii <- sum(2.5 < X & X < 3.5)/length(X)
-```
-The probability is **`r p_ii`** -> **`r percent(p_ii)`**.
+
+Analogously, we can calculate the expected probabilities of sepal width being included in the interval between 2.5cm and 3.5cm.
 
 ```{r}
 pn_ii <- (pnorm(3.5, mean=X.mean, sd=X.sd, lower.tail=TRUE) - 
           pnorm(2.5,mean=X.mean, sd=X.sd, lower.tail=TRUE))
 ```
-The probability of normal distribution is **`r pn_ii`** -> **`r percent(pn_ii)`**.
+The expected probability is **`r pn_ii`** -> **`r percent(pn_ii)`**.
+
+```{r}
+p_ii <- sum(2.5 < X & X < 3.5)/length(X)
+```
+The observed probability in our sample is **`r p_ii`** -> **`r percent(p_ii)`**.
+<br/>
 
 #### iii) X < 2.5
-```{r}
-p_iii <- sum(X < 2.5)/length(X)
-```
-The probability is **`r p_iii`** -> **`r percent(p_iii)`**.
+
+Finally, the expected probabilities of sepal width being less than 2.5cm can be, again, calculated using the `pnorm` function.
 
 ```{r}
 pn_iii <- pnorm(2.5, mean=X.mean, sd=X.sd, lower.tail=TRUE)
 ```
 The probability of normal distribution is **`r pn_iii`** -> **`r percent(pn_iii)`**.
 
+```{r}
+p_iii <- sum(X < 2.5)/length(X)
+```
+While the observed probability in our X is **`r p_iii`** -> **`r percent(p_iii)`**.
+
 <br/>
 
 ### 6) Take the scatter plots of the variable X versus i) the petal length and ii) the sepal length. Notice in each plot the data points appear to be clustered in two clusters. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
 
-## *with X (sepal width)*
 ```{r}
 plot(X, iris$Petal.Length, pch=19)
 ```
 
 ```{r}
 plot(X, iris$Sepal.Length, pch=19)
-```
-
-## *with petal width*
-```{r}
-plot(iris$Petal.Width, iris$Petal.Length, pch=19)
-```
-
-```{r}
-plot(iris$Petal.Width, iris$Sepal.Length, pch=19)
 ```
 
 #### 2. Put a threshold (limit) to isolate the data points of the first cluster corresponding to lower values of petal length and petal width. Examine if these belong to same species, by checking the data variable 'Species'.
