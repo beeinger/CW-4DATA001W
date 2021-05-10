@@ -300,4 +300,8 @@ The **lower limit is *`r ll_ii`* ** and the **upper limit is *`r ul_ii`* **
 
 #### iii) Are both samples large enough for such statistical study? What type of statistical study is this, what does it consist in, and how does it compare to the approach used in 3.5?
 
-<span style="color: red;">Explanation needed</span>
+Both samples can be considered large enough for this statistical study, in general we can consider a sample size $n$ to be large enough when $n>30$.
+
+The confidence interval is a type of estimate computed from the statistics of the observed data. In this particular case we are using the mean and standard deviation of our sample. We have a 95% confidence level that the estimated interval will contain the true value of the population parameter. 
+
+This is different from the study conducted in 3.5 because we were considering X to be a normally distributed population. We could easily calculate the true mean of the population.
